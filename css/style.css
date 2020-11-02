@@ -241,9 +241,16 @@ body .header .headerIn .cartBtn.disableClsss {
 
 body .header .headerIn .cartBtn span {
   position: absolute;
-  right: 0;
-  top: -0.75rem;
+  right: -0.125rem;
+  top: -.25rem;
   color: #e63101;
+  background: #fff200;
+  border-radius: 50%;
+  min-width: 1.125rem;
+  height: 1.125rem;
+  text-align: center;
+  line-height: 1.125rem;
+  font-size: 0.875rem;
 }
 
 @media only screen and (max-width: 591px) {
@@ -357,10 +364,17 @@ body .main .cartPan .cartAllListSec .cartList .cartItem .cartImg .discountText {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  line-height: 2rem;
   padding: 0;
   color: #029fc8;
   font-weight: 300;
+}
+
+body .main .cartPan .cartAllListSec .cartList .cartItem .cartImg .discountText .percentageText {
+  font-size: 1.25rem;
+  display: inline-block;
+  margin: 0.375rem 0 0 0.25rem;
 }
 
 body .main .cartPan .cartAllListSec .cartList .cartItem .cardTitle {
@@ -411,7 +425,7 @@ body .main .cartPan .cartAllListSec .cartList .cartItem .cartContent .contentLef
 }
 
 body .main .cartPan .cartAllListSec .cartList .cartItem .addtoCartBtn {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 700;
   padding: 0 2rem 0 0;
@@ -423,6 +437,7 @@ body .main .cartPan .cartAllListSec .cartList .cartItem .addtoCartBtn {
   -ms-background-size: 1.75rem auto;
   color: #029fc8;
   display: block;
+  position: relative;
 }
 
 body .main .cartPan .cartAllListSec .cartList .cartItem .addtoCartBtn:hover {
@@ -433,6 +448,15 @@ body .main .cartPan .cartAllListSec .cartList .cartItem .addtoCartBtn:hover {
 body .main .cartPan .cartAllListSec .cartList .cartItem .addtoCartBtn.disableBtn {
   pointer-events: none;
   opacity: 0.65;
+  background: none;
+}
+
+body .main .cartPan .cartAllListSec .cartList .cartItem .addtoCartBtn.disableBtn:after {
+  content: "\f00c";
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-family: 'FontAwesome';
 }
 
 body .main .cartPan .cartPopupSec {
@@ -472,7 +496,7 @@ body .main .cartPan .cartPopupSec .cartPopupIn {
 }
 
 body .main .cartPan .cartPopupSec .cartPopupIn .cartPopupBtm {
-  padding: 2rem;
+  padding: 2rem 2.5rem;
 }
 
 @media only screen and (max-width: 591px) {
@@ -484,12 +508,41 @@ body .main .cartPan .cartPopupSec .cartPopupIn .cartPopupBtm {
 body .main .cartPan .cartPopupSec .cartPopupIn .cartPopupBtm .orderSummary {
   max-height: 16rem;
   overflow: auto;
+  margin-bottom: 1.5rem;
+}
+
+body .main .cartPan .cartPopupSec .cartPopupIn .cartPopupBtm .orderTitle {
+  margin: 0 0 0.625rem 0;
+}
+
+body .main .cartPan .cartPopupSec .cartPopupIn .cartPopupBtm .checkoutBtnSec {
+  padding: 2rem 0 1rem;
+  text-align: center;
+}
+
+body .main .cartPan .cartPopupSec .cartPopupIn .cartPopupBtm .checkoutBtnSec .checkoutBtn {
+  height: 3rem;
+  background: #fff200;
+  color: #464646;
+  font-size: 1.25rem;
+  line-height: 3rem;
+  cursor: pointer;
+  border-radius: 1.5rem;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0 2.25rem;
+  font-weight: 700;
+}
+
+body .main .cartPan .cartPopupSec .cartPopupIn .cartPopupBtm .checkoutBtnSec .checkoutBtn:hover {
+  background: #029fc8;
+  color: #fff;
+  text-decoration: none;
 }
 
 body .main .cartPan .cartPopupSec .cartPopupIn .cartTitle {
-  text-align: center;
   margin: 0;
-  padding: 0.75rem 0;
+  padding: 0.75rem 2.5rem;
   background: #029fc8;
   color: #fff;
 }
@@ -507,6 +560,7 @@ body .main .cartPan .cartPopupSec .cartPopupIn .cartClose {
   justify-content: center;
   font-size: 1.25rem;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 body .main .cartPan .cartPopupSec .orderSummary table {
@@ -519,6 +573,10 @@ body .main .cartPan .cartPopupSec .orderSummary table thead th {
   background: #f2f2f2;
   padding: 0.5rem;
   font-size: 0.75rem;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid #ccc;
+  z-index: 9;
 }
 
 body .main .cartPan .cartPopupSec .orderSummary table tbody td {
@@ -543,6 +601,7 @@ body .main .cartPan .cartPopupSec .qtyBox .actIcon {
   justify-content: center;
   width: 2rem;
   border: 1px solid #ccc;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 591px) {
@@ -570,6 +629,15 @@ body .main .cartPan .cartPopupSec .qtyBox .inputCont .inputBox {
   text-align: center;
 }
 
+body .main .cartPan .cartPopupSec .qtyBox .inputCont .inputBox:read-only {
+  background: #f2f2f2;
+}
+
+body .main .cartPan .cartPopupSec .qtyBox .inputCont .inputBox:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
 @media only screen and (max-width: 591px) {
   body .main .cartPan .cartPopupSec .qtyBox .inputCont .inputBox {
     height: 1.5rem;
@@ -580,6 +648,7 @@ body .main .cartPan .cartPopupSec .qtyBox .inputCont .inputBox {
 
 body .main .cartPan .cartPopupSec .removeBtn {
   color: #ff0000;
+  cursor: pointer;
 }
 
 body .main .cartPan .cartPopupSec .totalOrderSec table {
