@@ -451,6 +451,9 @@ body{
                                 &:last-child{
                                     text-align: center;
                                 }
+                                &:nth-child(3){
+                                    text-align: right;
+                                }
                             }
                             tr{
                                 &:last-child{
